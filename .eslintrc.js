@@ -1,4 +1,6 @@
-module.exports = {
+const { defineConfig } = require('eslint-define-config')
+
+module.exports = defineConfig({
   env: {
     es6: true,
     browser: true,
@@ -120,6 +122,7 @@ module.exports = {
         'no-undef': 'off',
       },
     },
+
     {
       files: ['**/*.md/*.js', '**/*.md/*.ts'],
       rules: {
@@ -130,9 +133,6 @@ module.exports = {
     },
   ],
   rules: {
-    // prettier
-    'prettier/prettier': 'error',
-
     // js/ts
     camelcase: ['error', { properties: 'never' }],
     // 'no-console': ['warn', { allow: ['error'] }],
@@ -173,6 +173,9 @@ module.exports = {
       },
     ],
 
+    // stylistic-issues
+    'prefer-exponentiation-operator': 'error',
+
     // ts
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
@@ -180,6 +183,29 @@ module.exports = {
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
     '@typescript-eslint/consistent-type-imports': ['error', { disallowTypeAnnotations: false }],
     '@typescript-eslint/ban-ts-comment': ['off', { 'ts-ignore': false }],
+
+    // vue
+    'vue/no-v-html': 'off',
+    'vue/require-default-prop': 'off',
+    'vue/require-explicit-emits': 'off',
+    'vue/multi-word-component-names': 'off',
+    'vue/prefer-import-from-vue': 'off',
+    'vue/no-v-text-v-html-on-component': 'off',
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+          normal: 'always',
+          component: 'always',
+        },
+        svg: 'always',
+        math: 'always',
+      },
+    ],
+
+    // prettier
+    'prettier/prettier': 'error',
 
     // import
     'import/first': 'error',
@@ -254,4 +280,4 @@ module.exports = {
     'unicorn/prefer-type-error': 'error',
     'unicorn/throw-new-error': 'error',
   },
-}
+})
