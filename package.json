@@ -2,7 +2,9 @@
   "name": "dashboard-components",
   "version": "0.0.0",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky install"
+  },
   "peerDependencies": {
     "vue": "^3.3.8"
   },
@@ -31,7 +33,7 @@
     "eslint-plugin-unicorn": "^49.0.0",
     "eslint-plugin-vue": "^9.18.1",
     "fast-glob": "^3.3.2",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "prettier": "^3.1.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",

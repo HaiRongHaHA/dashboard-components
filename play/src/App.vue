@@ -1,6 +1,4 @@
-<script lang="ts" setup>
-const oi = 1
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div>sdkjfkjdskjfjkdsfjkdsjkfjkdsjkfsdfdsfjdfgfdgdksjjkfjkdsfdshkfhdsjkhfkjdsdsjhfkjdshfkj</div>
