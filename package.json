@@ -7,12 +7,20 @@
     "vue": "^3.3.8"
   },
   "dependencies": {
+    "lint-staged": "^15.1.0",
     "vue": "^3.3.8"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@esbuild-kit/cjs-loader": "^2.4.4",
+    "@types/node": "^20.9.3",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
     "@vitejs/plugin-vue": "^4.5.0",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.7.1",
+    "czg": "^1.7.1",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-define-config": "^2.0.0",
@@ -22,6 +30,7 @@
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-unicorn": "^49.0.0",
     "eslint-plugin-vue": "^9.18.1",
+    "fast-glob": "^3.3.2",
     "prettier": "^3.1.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",
@@ -30,5 +39,13 @@
   "engines": {
     "node": ">= 16",
     "pnpm": ">= 8.10.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx,md,json}": "eslint --fix"
   }
 }
