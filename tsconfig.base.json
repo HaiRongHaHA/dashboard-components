@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "target": "ES2020",
+    "target": "ESNext",
     "module": "ESNext",
     "baseUrl": ".",
+    "skipLibCheck": false,
     "sourceMap": false,
     "moduleResolution": "node",
     "allowJs": false,

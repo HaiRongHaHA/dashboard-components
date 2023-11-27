@@ -3,24 +3,34 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean": "rimraf dist",
+    "gul1": "gulp -f build/gulpfile.js",
+    "gulp": "gulp --require @esbuild-kit/cjs-loader -f build/gulpfile.ts && vue-tsc --declaration --emitDeclarationOnly",
+    "build": "pnpm gulp"
   },
   "peerDependencies": {
     "vue": "^3.3.8"
   },
   "dependencies": {
-    "lint-staged": "^15.1.0",
     "vue": "^3.3.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
     "@esbuild-kit/cjs-loader": "^2.4.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/gulp": "^4.0.17",
     "@types/node": "^20.9.3",
+    "@types/undertaker": "^1.2.11",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
     "@vitejs/plugin-vue": "^4.5.0",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "chalk": "^5.3.0",
     "commitizen": "^4.3.0",
+    "consola": "^3.2.3",
     "cz-git": "^1.7.1",
     "czg": "^1.7.1",
     "eslint": "^8.54.0",
@@ -33,9 +43,17 @@
     "eslint-plugin-unicorn": "^49.0.0",
     "eslint-plugin-vue": "^9.18.1",
     "fast-glob": "^3.3.2",
+    "gulp": "^4.0.2",
     "husky": "^8.0.0",
+    "lint-staged": "^15.1.0",
     "prettier": "^3.1.0",
-    "typescript": "^5.2.2"
+    "rimraf": "^5.0.5",
+    "rollup": "^4.5.1",
+    "rollup-plugin-esbuild": "^6.1.0",
+    "typescript": "^5.2.2",
+    "unplugin-vue-macros": "^2.7.0",
+    "vue-eslint-parser": "^9.3.2",
+    "vue-tsc": "^1.8.22"
   },
   "engines": {
     "node": ">= 16",

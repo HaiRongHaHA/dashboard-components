@@ -4,10 +4,10 @@
     "composite": true,
     "skipLibCheck": true,
     "module": "ESNext",
-    // "types": ["node"],
+    "types": ["node", "@types/undertaker"],
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["scripts/**/*"],
+  "include": ["scripts/**/*", "build/**/*"],
   "exclude": ["**/dist"]
 }
