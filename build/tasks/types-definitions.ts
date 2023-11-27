@@ -2,7 +2,6 @@ import path from 'path'
 // import { mkdir, readFile, writeFile } from 'fs/promises'
 import { readFile } from 'fs/promises'
 import { Project } from 'ts-morph' // 基于 TS Compiler API 的工具，完成各种类型的代码操作，例如重构、生成、检查和分析等
-import consola from 'consola'
 import { glob } from 'fast-glob'
 import * as vueCompiler from 'vue/compiler-sfc'
 // import chalk from 'chalk'
@@ -31,7 +30,7 @@ export const generateTypesDefinitions = async () => {
 
   // const sourceFiles = await addSourceFiles(project)
   await addSourceFiles(project)
-  consola.success('Added source files')
+  // consola.success('Added source files')
 
   // !!!!! ts检查报错，暂时有问题，不知道咋解决，后面看
   // typeCheck(project)

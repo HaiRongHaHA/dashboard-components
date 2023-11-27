@@ -2,14 +2,16 @@ import { parallel, series } from 'gulp'
 import {
   buildFullBundle,
   buildFullBundleMinify,
+  buildHelper,
   buildModules,
+  buildStyle,
   clean,
   copyFiles,
   copyTypesDefinitions,
   createOutput,
   defGlobalThisName,
   generateTypesDefinitions
-} from './build/index'
+} from './index'
 
 defGlobalThisName()
 
@@ -20,7 +22,9 @@ export default series(
     buildFullBundle,
     buildFullBundleMinify,
     buildModules,
-    generateTypesDefinitions
+    generateTypesDefinitions,
+    buildStyle,
+    buildHelper
   ),
   copyTypesDefinitions,
   copyFiles

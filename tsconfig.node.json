@@ -7,6 +7,6 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["scripts/**/*", "build/**/*", "gulpfile.ts"],
+  "include": ["scripts/**/*", "build/**/*", "build/gulpfile.ts"],
   "exclude": ["**/dist"]
 }

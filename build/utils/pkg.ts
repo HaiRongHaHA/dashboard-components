@@ -1,3 +1,5 @@
+import type { ProjectManifest } from '@pnpm/types'
+
 export const getPackageDependencies = (
   pkgPath: string
 ): Record<'dependencies' | 'peerDependencies', string[]> => {
@@ -18,4 +20,9 @@ export const excludeFiles = (files: string[]) => {
   return files.filter(
     (path) => !excludes.some((exclude) => path.includes(exclude))
   )
+}
+
+export const getPackageManifest = (pkgPath: string) => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  return require(pkgPath) as ProjectManifest
 }
