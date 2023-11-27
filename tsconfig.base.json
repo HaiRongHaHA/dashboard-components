@@ -4,7 +4,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "baseUrl": ".",
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "sourceMap": false,
     "moduleResolution": "node",
     "allowJs": false,

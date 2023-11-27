@@ -1,3 +1,5 @@
+export * from './tasks'
+
 /**
  * TIPS This is a temporary solution to fix the building error
  * ReferenceError: __name is not defined after upgrade the vue to @3.3.x

@@ -13,10 +13,13 @@ const scopes = [
   'style',
   'ci',
   'dev',
-  'deploy',
+  'deploy'
 ]
 
-const gitStatus = execSync('git status --porcelain || true').toString().trim().split('\n')
+const gitStatus = execSync('git status --porcelain || true')
+  .toString()
+  .trim()
+  .split('\n')
 
 console.log('@gitStatus', gitStatus)
 
@@ -62,7 +65,11 @@ export default {
      */
     'header-max-length': [2, 'always', 72],
     'scope-case': [2, 'always', 'lower-case'],
-    'subject-case': [1, 'never', ['sentence-case', 'start-case', 'pascal-case', 'upper-case']],
+    'subject-case': [
+      1,
+      'never',
+      ['sentence-case', 'start-case', 'pascal-case', 'upper-case']
+    ],
     'subject-empty': [2, 'never'],
     'subject-full-stop': [2, 'never', '.'],
     'type-case': [2, 'always', 'lower-case'],
@@ -87,15 +94,15 @@ export default {
         'release',
         'style',
         'test',
-        'improvement',
-      ],
-    ],
+        'improvement'
+      ]
+    ]
   },
   prompt: {
     defaultScope: scopeComplete,
     customScopesAlign: !scopeComplete ? 'top' : 'bottom',
     defaultSubject: subjectComplete && `[${subjectComplete}] `,
     allowCustomIssuePrefixs: false,
-    allowEmptyIssuePrefixs: false,
-  },
+    allowEmptyIssuePrefixs: false
+  }
 }
