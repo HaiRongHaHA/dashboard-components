@@ -2,12 +2,64 @@
   "name": "dashboard-components",
   "version": "0.0.0",
   "private": true,
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "workspaces": [
+    "packages",
+    "docs",
+    "docs"
+  ],
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./global": {
+      "types": "./global.d.ts"
+    },
+    "./es": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs"
+    },
+    "./lib": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js"
+    },
+    "./es/*.mjs": {
+      "types": "./es/*.d.ts",
+      "import": "./es/*.mjs"
+    },
+    "./es/*": {
+      "types": [
+        "./es/*.d.ts",
+        "./es/*/index.d.ts"
+      ],
+      "import": "./es/*.mjs"
+    },
+    "./lib/*.js": {
+      "types": "./lib/*.d.ts",
+      "require": "./lib/*.js"
+    },
+    "./lib/*": {
+      "types": [
+        "./lib/*.d.ts",
+        "./lib/*/index.d.ts"
+      ],
+      "require": "./lib/*.js"
+    },
+    "./*": "./*"
+  },
+  "unpkg": "dist/index.full.js",
+  "jsdelivr": "dist/index.full.js",
+  "style": "dist/index.css",
   "scripts": {
     "prepare": "husky install",
     "clean": "rimraf dist",
     "gulp": "gulp --require @esbuild-kit/cjs-loader -f build/gulpfile.ts",
     "tsc": "vue-tsc -p tsconfig.web.json",
-    "build": "pnpm gulp"
+    "build": "pnpm gulp",
+    "play": "pnpm -C play dev"
   },
   "peerDependencies": {
     "vue": "^3.3.8"
@@ -15,6 +67,7 @@
   "dependencies": {
     "vue": "^3.3.8"
   },
+  "types": "es/index.d.ts",
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",

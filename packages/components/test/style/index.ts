@@ -1,1 +1,1 @@
-import '@dc-components/theme/src/test.scss'
+import 'dc-components/theme/src/test.scss'
