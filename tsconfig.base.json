@@ -15,6 +15,9 @@
     "esModuleInterop": true,
     "removeComments": false,
     "rootDir": ".",
-    "types": []
+    "types": [],
+    "paths": {
+      "@dc-components/*": ["packages/*"]
+    }
   }
 }

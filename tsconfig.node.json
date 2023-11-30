@@ -8,5 +8,5 @@
     "allowSyntheticDefaultImports": true
   },
   "include": ["scripts/**/*", "build/**/*", "build/gulpfile.ts"],
-  "exclude": ["**/dist"]
+  "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
 }

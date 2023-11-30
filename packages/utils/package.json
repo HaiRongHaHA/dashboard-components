@@ -1,0 +1,5 @@
+{
+  "name": "@dc-components/utils",
+  "private": true,
+  "main": "index.ts"
+}

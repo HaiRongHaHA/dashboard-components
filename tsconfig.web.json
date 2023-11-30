@@ -9,13 +9,12 @@
     // "emitDeclarationOnly": true, // 只生成.d.ts文件，不生成js文件
     // "declarationDir": "./dist/types/" // 声明文件的路径
   },
-  "include": ["packages/**/*", "typings/env.d.ts"],
+  "include": ["packages", "typings/env.d.ts"],
   "exclude": [
     "node_modules",
     "**/dist",
     "**/__tests__/**/*",
     "**/gulpfile.ts",
-    "**/test-helper",
     "packages/test-utils",
     "**/*.md"
   ]
