@@ -1,8 +1,10 @@
 import * as path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { dcRoot, pkgRoot } from '../build/paths'
+// import { dcRoot, pkgRoot } from '@dc-components/build'
+import { default as build } from '@dc-components/build'
 
+const { dcRoot, pkgRoot } = build
 // export const projRoot = path.resolve(__dirname, '..')
 // export const pkgRoot = path.resolve(projRoot, 'packages')
 // export const dcRoot = path.resolve(pkgRoot, 'dc-components')
@@ -24,5 +26,5 @@ export default defineConfig({
       }
     ]
   },
-  plugins: [vue()]
+  plugins: [vue() as any]
 })

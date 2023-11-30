@@ -2,5 +2,5 @@
 const test = 'test vue'
 </script>
 <template>
-  <div class="dc-test">{{ test }}我是谁呀你猜猜</div>
+  <div class="dc-test">{{ test }}555我是谁呀你猜猜00000</div>
 </template>
