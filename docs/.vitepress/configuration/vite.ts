@@ -1,17 +1,10 @@
 import * as path from 'path'
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-// import { dcRoot, pkgRoot } from '../build/paths'
 
 export const projRoot = path.resolve(__dirname, '..')
 export const pkgRoot = path.resolve(projRoot, 'packages')
 export const dcRoot = path.resolve(pkgRoot, 'dc-components')
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  server: {
-    host: '0.0.0.0'
-  },
+export const vite = {
   resolve: {
     alias: [
       {
@@ -23,6 +16,5 @@ export default defineConfig({
         replacement: `${pkgRoot}/$2`
       }
     ]
-  },
-  plugins: [vue()]
-})
+  }
+}

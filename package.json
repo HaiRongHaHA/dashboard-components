@@ -59,7 +59,8 @@
     "gulp": "gulp --require @esbuild-kit/cjs-loader -f build/gulpfile.ts",
     "tsc": "vue-tsc -p tsconfig.web.json",
     "build": "pnpm gulp",
-    "play": "pnpm -C play dev"
+    "play": "pnpm -C play dev",
+    "docs:dev": "pnpm -C docs docs:dev"
   },
   "peerDependencies": {
     "vue": "^3.3.8"
@@ -123,7 +124,7 @@
     "vue-tsc": "^1.8.22"
   },
   "engines": {
-    "node": ">= 16",
+    "node": ">= 18",
     "pnpm": ">= 8.10.0"
   },
   "config": {
