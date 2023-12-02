@@ -1,15 +1,11 @@
 <script lang="ts" setup>
-import { DcTest } from 'dc-components'
-import { utils } from 'dc-components/es/utils'
+import { DcLayout } from 'dc-components'
 </script>
 
 <template>
-  <div>
-    <DcTest />
-    -------
-    {{ utils }}
-    -------
-  </div>
+  <DcLayout>
+    <div>999</div>
+  </DcLayout>
 </template>
 
 <style lang="scss" scoped></style>
