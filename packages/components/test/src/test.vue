@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-const test = 'test vue'
+const test = 'test vue@1'
 </script>
 <template>
-  <div class="dc-test">{{ test }}555我是谁呀你猜猜00000</div>
+  <div class="dc-test">{{ test }}</div>
 </template>

@@ -1,4 +1,4 @@
-import path from 'path'
+import * as path from 'path'
 // import { mkdir, readFile, writeFile } from 'fs/promises'
 import { readFile } from 'fs/promises'
 import { Project } from 'ts-morph' // 基于 TS Compiler API 的工具，完成各种类型的代码操作，例如重构、生成、检查和分析等
@@ -9,7 +9,7 @@ import { excludeFiles } from '../utils/pkg'
 import { buildOutput, dcRoot, pkgRoot, projRoot } from '../paths'
 import type { CompilerOptions, SourceFile } from 'ts-morph'
 
-const TSCONFIG_PATH = path.resolve(projRoot, 'tsconfig.web.json')
+const TSCONFIG_PATH = path.resolve(projRoot, './tsconfig.web.json')
 const outDir = path.resolve(buildOutput, 'types')
 
 export const generateTypesDefinitions = async () => {

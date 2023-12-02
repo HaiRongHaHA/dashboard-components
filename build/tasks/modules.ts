@@ -10,7 +10,7 @@ import consola from 'consola'
 import { excludeFiles } from '../utils/pkg'
 import { dcOutput, dcRoot, pkgRoot } from '../paths'
 import { generateExternal, writeBundles } from '../utils/rollup'
-import { target } from '../build-info'
+import { target } from '../constants'
 export const buildModules = async () => {
   consola.info('Start building bundle modules...')
   const input = excludeFiles(

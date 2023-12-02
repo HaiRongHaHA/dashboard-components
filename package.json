@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@8.11.0",
+  "scripts": {
+    "prepare": "husky install",
+    "gulp": "gulp --require @esbuild-kit/cjs-loader -f build/gulpfile.ts",
+    "tsc": "vue-tsc -p tsconfig.web.json",
+    "build": "pnpm gulp",
+    "play": "vite --config play/vite.config.ts dev",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
+  },
   "main": "lib/index.js",
   "module": "es/index.mjs",
   "exports": {
@@ -49,17 +58,6 @@
   "unpkg": "dist/index.full.js",
   "jsdelivr": "dist/index.full.js",
   "style": "dist/index.css",
-  "scripts": {
-    "prepare": "husky install",
-    "clean": "rimraf dist",
-    "gulp": "gulp --require @esbuild-kit/cjs-loader -f build/gulpfile.ts",
-    "tsc": "vue-tsc -p tsconfig.web.json",
-    "build": "pnpm gulp",
-    "play": "pnpm -C play dev",
-    "docs:dev": "pnpm -C docs docs:dev",
-    "test": "vitest",
-    "test:coverage": "vitest --coverage"
-  },
   "peerDependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "element-plus": "^2.4.3",
@@ -68,6 +66,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "element-plus": "^2.4.3",
+    "vite": "^5.0.4",
     "vue": "^3.3.8"
   },
   "types": "es/index.d.ts",

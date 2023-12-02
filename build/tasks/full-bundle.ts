@@ -7,13 +7,12 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import consola from 'consola'
 import { dcOutput, dcRoot } from '../paths'
-import { target } from '../build-info'
+import { PKG_BRAND_NAME, PKG_CAMELCASE_NAME, target } from '../constants'
 import {
   formatBundleFilename,
   generateExternal,
   writeBundles
 } from '../utils/rollup'
-import { PKG_BRAND_NAME, PKG_CAMELCASE_NAME } from '../constants'
 import type { Plugin } from 'rollup'
 
 const version = '0.0.0-dev.1'

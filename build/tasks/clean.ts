@@ -1,2 +1,2 @@
 import { run } from '../utils/process'
-export const clean = () => run('pnpm run clean')
+export const clean = () => run('rimraf dist')

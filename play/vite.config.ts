@@ -1,18 +1,17 @@
 import * as path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-// import { dcRoot, pkgRoot } from '@dc-components/build'
-import { default as build } from '@dc-components/build'
 
-const { dcRoot, pkgRoot } = build
-// export const projRoot = path.resolve(__dirname, '..')
-// export const pkgRoot = path.resolve(projRoot, 'packages')
-// export const dcRoot = path.resolve(pkgRoot, 'dc-components')
+export const projRoot = path.resolve(__dirname, '..')
+export const pkgRoot = path.resolve(projRoot, 'packages')
+export const dcRoot = path.resolve(pkgRoot, 'dc-components')
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  root: 'play',
   server: {
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    proxy: {}
   },
   resolve: {
     alias: [
