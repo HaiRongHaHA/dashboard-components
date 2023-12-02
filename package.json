@@ -5,6 +5,7 @@
   "packageManager": "pnpm@8.11.0",
   "scripts": {
     "prepare": "husky install",
+    "gen": "bash ./scripts/gc.sh",
     "gulp": "gulp --require @esbuild-kit/cjs-loader -f build/gulpfile.ts",
     "tsc": "vue-tsc -p tsconfig.web.json",
     "build": "pnpm gulp",
@@ -65,8 +66,9 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
+    "@vue/shared": "^3.3.9",
     "element-plus": "^2.4.3",
-    "vite": "^5.0.4",
+    "lodash-unified": "1.0.3",
     "vue": "^3.3.8"
   },
   "types": "es/index.d.ts",
@@ -83,6 +85,7 @@
     "@types/gulp-clean-css": "^4.3.4",
     "@types/gulp-rename": "^2.0.6",
     "@types/gulp-sass": "^5.0.4",
+    "@types/jsdom": "^21.1.6",
     "@types/node": "^20.9.3",
     "@types/undertaker": "^1.2.11",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
@@ -90,6 +93,7 @@
     "@vitejs/plugin-vue": "^4.5.0",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vitest/coverage-v8": "^0.34.6",
+    "@vue/test-utils": "^2.4.3",
     "chalk": "^5.3.0",
     "commitizen": "^4.3.0",
     "consola": "^3.2.3",
@@ -123,6 +127,7 @@
     "ts-morph": "^20.0.0",
     "typescript": "^5.2.2",
     "unbuild": "^0.7.4",
+    "vite": "^5.0.4",
     "vitest": "^0.34.6",
     "vue-eslint-parser": "^9.3.2",
     "vue-tsc": "^1.8.22"
