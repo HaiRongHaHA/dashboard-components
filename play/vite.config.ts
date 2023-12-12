@@ -1,6 +1,11 @@
 import * as path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { viteMockServe } from 'vite-plugin-mock'
+import { DcResolver } from './plugins'
 
 export const projRoot = path.resolve(__dirname, '..')
 export const pkgRoot = path.resolve(projRoot, 'packages')
@@ -12,6 +17,7 @@ export default defineConfig({
   root: 'play',
   server: {
     host: '0.0.0.0',
+    port: 8888,
     proxy: {}
   },
   resolve: {
@@ -30,5 +36,17 @@ export default defineConfig({
       }
     ]
   },
-  plugins: [vue() as any]
+  plugins: [
+    vue(),
+    AutoImport({
+      resolvers: [ElementPlusResolver(), DcResolver()]
+    }),
+    Components({
+      resolvers: [ElementPlusResolver(), DcResolver()]
+    }),
+    viteMockServe({
+      // mockPath的路径前面不能加'/'，写成/play/src/mock就不生效了
+      mockPath: 'play/src/mock'
+    })
+  ]
 })

@@ -12,6 +12,6 @@
 
     // playground
     "play/main.ts",
-    "play/src/**/*"
+    "play/src/**/*.vue"
   ]
 }

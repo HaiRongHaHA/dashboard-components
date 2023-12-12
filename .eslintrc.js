@@ -216,6 +216,20 @@ module.exports = defineConfig({
         math: 'always'
       }
     ],
+    'vue/component-name-in-template-casing': [
+      'error',
+      'PascalCase',
+      {
+        registeredComponentsOnly: false
+        // ignores: ['/^el-/']
+      }
+    ],
+    'vue/component-tags-order': [
+      'error',
+      {
+        order: ['script', 'template', 'style']
+      }
+    ],
 
     // prettier
     'prettier/prettier': 'error',
