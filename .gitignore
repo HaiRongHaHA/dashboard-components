@@ -12,7 +12,7 @@ dist
 *.d.ts
 
 # cache
-docs/.vitepress/cache
+# docs/.vitepress/cache
 
 # test
 coverage

@@ -1,4 +1,4 @@
-import { buildProps } from '@dc-components/utils'
+import { buildProps } from '../../../utils'
 
 import type { ExtractPropTypes } from 'vue'
 import type Layout from './layout.vue'

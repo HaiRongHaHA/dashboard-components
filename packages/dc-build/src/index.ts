@@ -1,4 +1,5 @@
 export * from './tasks'
+export * from './paths'
 
 /**
  * TIPS This is a temporary solution to fix the building error

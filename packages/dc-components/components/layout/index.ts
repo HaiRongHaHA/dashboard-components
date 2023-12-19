@@ -1,4 +1,4 @@
-import { withInstall } from '@dc-components/utils'
+import { withInstall } from '../../utils'
 import Layout from './src/layout.vue'
 
 export const DcLayout = withInstall(Layout)

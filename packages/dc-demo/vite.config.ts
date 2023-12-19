@@ -5,16 +5,16 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { viteMockServe } from 'vite-plugin-mock'
+// import { hookRoot } from '@rolldogking/dc-build'
 import { DcResolver } from './plugins'
+// console.log('hookRoot', hookRoot)
 
-export const projRoot = path.resolve(__dirname, '..')
-export const pkgRoot = path.resolve(projRoot, 'packages')
-export const dcRoot = path.resolve(pkgRoot, 'dc-components')
-export const utilsRoot = path.resolve(pkgRoot, 'utils')
+const projRoot = path.resolve(__dirname, '..')
+// const pkgRoot = path.resolve(projRoot, 'packages')
+const dcRoot = path.resolve(projRoot, 'dc-components')
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: 'play',
   server: {
     host: '0.0.0.0',
     port: 8888,
@@ -28,11 +28,7 @@ export default defineConfig({
       },
       {
         find: /^dc-components\/(es|lib)\/(.*)$/,
-        replacement: `${pkgRoot}/$2`
-      },
-      {
-        find: '@dc-components/utils',
-        replacement: path.resolve(utilsRoot, 'index.ts')
+        replacement: `${dcRoot}/$2`
       }
     ]
   },
@@ -45,8 +41,8 @@ export default defineConfig({
       resolvers: [ElementPlusResolver(), DcResolver()]
     }),
     viteMockServe({
-      // mockPath的路径前面不能加'/'，写成/play/src/mock就不生效了
-      mockPath: 'play/src/mock'
+      // mockPath的路径前面不能加'/'
+      mockPath: 'src/mock'
     })
   ]
 })

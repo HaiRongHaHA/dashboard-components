@@ -10,7 +10,7 @@ const handleClose = (key: string, keyPath: string[]) => {
 
 <template>
   <ElContainer class="dc-layout">
-    <ElButton>22</ElButton>
+    <ElButton type="danger">我是按钮</ElButton>
     <ElAside width="auto">
       <h5>logo home</h5>
       <ElScrollbar>

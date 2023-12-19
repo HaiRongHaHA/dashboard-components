@@ -10,7 +10,7 @@ import {
   createOutput,
   defGlobalThisName,
   generateTypesDefinitions
-} from './index'
+} from './src/index'
 
 defGlobalThisName()
 

@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true, // 允许TypeScript项目与项目引用一起使用的约束——指定文件用来存储增量编译信息,默认是tsconfig.tsbuildinfo*
+    "types": ["@types/undertaker"]
+  },
+  "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
+}

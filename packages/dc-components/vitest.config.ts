@@ -14,12 +14,11 @@ export default defineConfig({
   test: {
     clearMocks: true,
     environment: 'jsdom',
-    setupFiles: ['./vitest.setup.ts'],
     alias: [
-      {
-        find: '@dc-components/utils',
-        replacement: path.resolve(utilsRoot, 'index.ts')
-      }
+      // {
+      //   find: '@dc-components/utils',
+      //   replacement: path.resolve(utilsRoot, 'index.ts')
+      // }
     ]
   }
 })

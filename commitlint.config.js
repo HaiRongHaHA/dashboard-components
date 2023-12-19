@@ -1,3 +1,108 @@
-// commitlint uses `ts-node` to load typescript config, it's too slow. So we replace it with `esbuild`.
-require('@esbuild-kit/cjs-loader')
-module.exports = require('./commitlint.config.ts').default
+const { execSync } = require('child_process')
+const fg = require('fast-glob')
+
+const getPackages = (packagePath) =>
+  fg.sync('*', { cwd: packagePath, onlyDirectories: true })
+
+const scopes = [
+  ...getPackages('packages'),
+  'docs',
+  'demo',
+  'project',
+  'core',
+  'style',
+  'ci',
+  'dev',
+  'deploy'
+]
+
+const gitStatus = execSync('git status --porcelain || true')
+  .toString()
+  .trim()
+  .split('\n')
+
+console.log('@gitStatus', gitStatus)
+
+const scopeComplete = gitStatus
+  .find((r) => ~r.indexOf('M  packages'))
+  ?.replace(/\//g, '%%')
+  ?.match(/packages%%((\w|-)*)/)?.[1]
+
+console.log('@scopeComplete', scopeComplete)
+
+const subjectComplete = gitStatus
+  .find((r) => ~r.indexOf('M  packages/components'))
+  ?.replace(/\//g, '%%')
+  ?.match(/packages%%components%%((\w|-)*)/)?.[1]
+
+console.log('@subjectComplete', subjectComplete)
+
+module.exports = {
+  rules: {
+    /**
+     * type[scope]: [function] description
+     *      ^^^^^
+     */
+    'scope-enum': [2, 'always', scopes],
+    /**
+     * type[scope]: [function] description
+     *
+     * ^^^^^^^^^^^^^^ empty line.
+     * - Something here
+     */
+    'body-leading-blank': [1, 'always'],
+    /**
+     * type[scope]: [function] description
+     *
+     * - something here
+     *
+     * ^^^^^^^^^^^^^^
+     */
+    'footer-leading-blank': [1, 'always'],
+    /**
+     * type[scope]: [function] description [No more than 72 characters]
+     *      ^^^^^
+     */
+    'header-max-length': [2, 'always', 72],
+    'scope-case': [2, 'always', 'lower-case'],
+    'subject-case': [
+      1,
+      'never',
+      ['sentence-case', 'start-case', 'pascal-case', 'upper-case']
+    ],
+    'subject-empty': [2, 'never'],
+    'subject-full-stop': [2, 'never', '.'],
+    'type-case': [2, 'always', 'lower-case'],
+    'type-empty': [2, 'never'],
+    /**
+     * type[scope]: [function] description
+     * ^^^^
+     */
+    'type-enum': [
+      2,
+      'always',
+      [
+        'build',
+        'chore',
+        'ci',
+        'docs',
+        'feat',
+        'fix',
+        'perf',
+        'refactor',
+        'revert',
+        'release',
+        'style',
+        'test',
+        'improvement'
+      ]
+    ]
+  },
+  prompt: {
+    defaultScope: scopeComplete,
+    customScopesAlign: !scopeComplete ? 'top' : 'bottom',
+    defaultSubject: subjectComplete && `[${subjectComplete}] `,
+    allowCustomIssuePrefixs: false,
+    allowEmptyIssuePrefixs: false
+  }
+}

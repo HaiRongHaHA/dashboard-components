@@ -1,8 +1,18 @@
 {
-  "references": [
-    { "path": "./tsconfig.web.json" },
-    { "path": "./tsconfig.play.json" },
-    { "path": "./tsconfig.node.json" },
-    { "path": "./tsconfig.vitest.json" }
-  ]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": true,
+    "noUnusedLocals": true, // 禁止未使用的本地变量。如果一个本地变量声明未被使用，则会抛出错误。
+    "resolveJsonModule": true, ////允许导入扩展名为“.json”的模块
+    "removeComments": false, // 移除注释
+    "moduleResolution": "node", // 模块解析策略，一般都是使用 node
+    "sourceMap": false, // sourceMap 选项用来表示是否生成sourcemap 文件，这些文件允许调试器和其他工具在使用实际生成的 JavaScript 文件时，显示原始的 TypeScript 代码。
+    "target": "ES2015", // 指定编译出来的 JavaScript 代码的目标执行环境是什么。常用值有 ES3、ES5、ES6/ES2015、ES7/ES2016等。默认为 "ES3"。
+    "module": "ESNext", // 指定模块的生成方式，可以是 CommonJS、UMD、AMD、System、ES2020 等等。一般常用的有 CommonJS 和 ES2020。默认为 "CommonJS"。
+    "skipLibCheck": true, // 跳过检查声明文件(*.d.ts)的类型检查，节省编译期的时间。
+    "allowSyntheticDefaultImports": true, // 允许合成默认导出，import * as xxx
+    "esModuleInterop": true, // 用于支持 CommonJS 模块的按需导入，一般建议开启。默认为 false，为true时，allowSyntheticDefaultImports也要设置为true。
+    "lib": ["ESNext", "DOM", "DOM.Iterable"], // 表示编译器在编译过程中可以访问的库文件的列表。例如，如果你需要使用 Promise，就需要将 es6 或以上版本的库文件加入到该选项中。默认值为一个空数组。
+    "types": ["node"]
+  }
 }
