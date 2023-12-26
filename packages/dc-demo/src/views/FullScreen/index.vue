@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <RouterView />
+  <div>全屏路由</div>
 </template>
 
 <style lang="scss" scoped></style>

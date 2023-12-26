@@ -1,3 +1,3 @@
-import request from '../utils/request'
+import request from '@/utils/request'
 
-export const getPermision = (params?) => request.get('/getPermision', params)
+export const getPermision = (params?: any) => request.get('/getPermision', params)

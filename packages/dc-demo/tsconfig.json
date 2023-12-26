@@ -1,10 +1,13 @@
 {
   "extends": "../../tsconfig.json",
-  "include": [
-    "src",
-    // "typings/components.d.ts",
-    "../../typings/env.d.ts",
-    "../../typings/vite-env.d.ts"
-  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "types": ["vite/client", "element-plus/global"],
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src", "../../typings/env.d.ts"],
   "exclude": ["**/node_modules", "**/.*/"]
 }

@@ -1,12 +1,10 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="dc-layout__header">
-    <!-- <span @click="toggle">
-      <ElIconExpand v-if="collapse" />
-      <ElIconFold v-else />
-    </span> -->
-  </div>
+  <ElHeader class="dc-layout__header">
+    <div class="dc-layout__header__logo">ProComponents</div>
+    <div class="dc-layout__header__right">
+      <slot />
+    </div>
+  </ElHeader>
 </template>
-
-<style lang="scss" scoped></style>

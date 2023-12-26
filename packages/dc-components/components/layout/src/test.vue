@@ -1,0 +1,43 @@
+<script lang="ts" setup>
+import { Document, Location, Setting } from '@element-plus/icons-vue'
+const handleOpen = (key: string, keyPath: string[]) => {
+  console.log(key, keyPath)
+}
+const handleClose = (key: string, keyPath: string[]) => {
+  console.log(key, keyPath)
+}
+</script>
+
+<template>
+  <ElAside width="auto">
+    <ElScrollbar>
+      <ElMenu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+        <ElSubMenu index="1">
+          <template #title>
+            <ElIcon><Location /></ElIcon>
+            <span>Navigator One</span>
+          </template>
+          <ElSubMenu index="1-4">
+            <template #title>item four</template>
+            <ElMenuItem index="1-4-1">item one</ElMenuItem>
+
+            <ElSubMenu index="1-5">
+              <template #title>item four</template>
+              <ElMenuItem index="1-5-1">item one</ElMenuItem>
+            </ElSubMenu>
+          </ElSubMenu>
+        </ElSubMenu>
+        <ElMenuItem index="3" disabled>
+          <ElIcon><Document /></ElIcon>
+          <span>Navigator Three</span>
+        </ElMenuItem>
+        <ElMenuItem index="4">
+          <ElIcon><Setting /></ElIcon>
+          <span>Navigator Four</span>
+        </ElMenuItem>
+      </ElMenu>
+    </ElScrollbar>
+  </ElAside>
+</template>
+
+<style lang="scss" scoped></style>

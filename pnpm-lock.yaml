@@ -45,6 +45,12 @@ importers:
         specifier: ^5.2.2
         version: 5.3.3
 
+  packages/dc-auto-import-resolver:
+    devDependencies:
+      unbuild:
+        specifier: ^0.7.4
+        version: 0.7.6
+
   packages/dc-build:
     devDependencies:
       '@esbuild-kit/cjs-loader':
@@ -187,12 +193,18 @@ importers:
         specifier: ^3.3.8
         version: 3.3.12(typescript@5.3.3)
     devDependencies:
+      '@rolldogking/dc-auto-import-resolver':
+        specifier: workspace:^
+        version: link:../dc-auto-import-resolver
       '@rolldogking/dc-build':
         specifier: workspace:^
         version: link:../dc-build
       '@vitejs/plugin-vue':
         specifier: ^4.5.0
         version: 4.5.2(vite@5.0.10)(vue@3.3.12)
+      '@vitejs/plugin-vue-jsx':
+        specifier: ^3.1.0
+        version: 3.1.0(vite@5.0.10)(vue@3.3.12)
       axios:
         specifier: ^1.6.2
         version: 1.6.2

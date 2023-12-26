@@ -13,8 +13,10 @@
     "vue": "^3.3.8"
   },
   "devDependencies": {
+    "@rolldogking/dc-auto-import-resolver": "workspace:^",
     "@rolldogking/dc-build": "workspace:^",
     "@vitejs/plugin-vue": "^4.5.0",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
     "axios": "^1.6.2",
     "pinia": "^2.1.7",
     "sass": "^1.69.5",

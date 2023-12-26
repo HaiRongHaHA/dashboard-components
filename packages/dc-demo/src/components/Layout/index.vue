@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <RouterView />
+  <DcLayout> 我是统一的 </DcLayout>
 </template>
 
 <style lang="scss" scoped></style>
